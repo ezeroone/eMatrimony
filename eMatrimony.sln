@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eMatrimony.Web", "eMatrimony\eMatrimony.Web.csproj", "{7D5E9637-3B3E-4C10-B735-70CCCE96876B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eMatrimony.DAL", "eMatrimony.DAL\eMatrimony.DAL.csproj", "{8805FF7E-5670-4CC6-BBBA-B6D68E26DA1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eMatrimony.BLL", "eMatrimony.BLL\eMatrimony.BLL.csproj", "{2CE83B6D-4813-42D0-B743-4BC94C414BF1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D5E9637-3B3E-4C10-B735-70CCCE96876B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D5E9637-3B3E-4C10-B735-70CCCE96876B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D5E9637-3B3E-4C10-B735-70CCCE96876B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D5E9637-3B3E-4C10-B735-70CCCE96876B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8805FF7E-5670-4CC6-BBBA-B6D68E26DA1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8805FF7E-5670-4CC6-BBBA-B6D68E26DA1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8805FF7E-5670-4CC6-BBBA-B6D68E26DA1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8805FF7E-5670-4CC6-BBBA-B6D68E26DA1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CE83B6D-4813-42D0-B743-4BC94C414BF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CE83B6D-4813-42D0-B743-4BC94C414BF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CE83B6D-4813-42D0-B743-4BC94C414BF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CE83B6D-4813-42D0-B743-4BC94C414BF1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
