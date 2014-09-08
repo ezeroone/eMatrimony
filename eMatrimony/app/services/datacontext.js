@@ -6,6 +6,7 @@
 
     function datacontext(common, $http) {
         var $q = common.$q;
+        var logger = common.logger;
 
         var service = {
             register: register
@@ -14,8 +15,8 @@
         return service;
 
         function register(profile) {
-            $http.post('/api/profile', profile).success(function(data) {
-                alert('OK');
+            return $http.post('/api/profile', profile).success(function(res) {
+                return $q.when(res);
             });
         }
 

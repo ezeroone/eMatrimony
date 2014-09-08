@@ -1,5 +1,7 @@
 ﻿using System.Data.Entity;
+using System.Linq;
 using System.Threading.Tasks;
+using eMatrimony.BLL.Model;
 using eMatrimony.DAL;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -17,10 +19,10 @@ namespace eMatrimony.BLL.Services
             userManager = new UserManager<Profile>(new UserStore<Profile>(eMatrimonyContext));
         }
 
-        public async Task<bool> CreateNewProfile(Profile profile, string password)
+        public async Task<BaseResponse> CreateNewProfile(CreateNewProfileModel createNewProfileModel)
         {
-            var result = await userManager.CreateAsync(profile, password);
-            return result.Succeeded;
+            var result = await userManager.CreateAsync(createNewProfileModel.Profile, createNewProfileModel.Password);
+            return new BaseResponse(result.Succeeded, string.Join(",", result.Errors.ToArray()));
         }
 
     }
