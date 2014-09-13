@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using eMatrimony.BLL.Model;
@@ -23,6 +24,12 @@ namespace eMatrimony.BLL.Services
         {
             var result = await userManager.CreateAsync(createNewProfileModel.Profile, createNewProfileModel.Password);
             return new BaseResponse(result.Succeeded, string.Join(",", result.Errors.ToArray()));
+        }
+
+        public async Task<IEnumerable<Profile>> GetProfiles()
+        {
+            var profiles = await userManager.Users.ToListAsync();            
+            return profiles;
         }
 
     }

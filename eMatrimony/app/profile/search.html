@@ -1,0 +1,33 @@
+﻿<section class="mainbar" data-ng-controller="search as vm">
+
+    <section class="matter">
+        <div class="container">
+
+            <h3>Search Profiles</h3>
+            <br />
+
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search Text" ng-model="vm.searchText" />
+            </div>
+
+
+            <table class="table">
+                <tr>
+                    <th><a href="" ng-click="vm.predicate = 'displayName'; vm.reverse=!vm.reverse">Name</a></th>
+                    <th><a href="" ng-click="vm.predicate = 'dateOfBirthday'; vm.reverse=!vm.reverse">Date of Birthday</a></th>
+                    <th><a href="" ng-click="vm.predicate = 'religion'; reverse=!vm.reverse">Religion</a></th>
+                    <th><a href="" ng-click="vm.predicate = 'educationLevel'; vm.reverse=!vm.reverse">Education Level</a></th>
+                    <th><a href="" ng-click="vm.predicate = 'placeOfBirthday'; vm.reverse=!vm.reverse">Place Of Birthday</a></th>
+                </tr>
+                <tr ng-repeat="item in vm.profiles | filter:vm.searchText | orderBy:vm.predicate:vm.reverse">
+                    <td>{{item.displayName}}</td>
+                    <td>{{item.dateOfBirthday}}</td>
+                    <td>{{item.religion}}</td>
+                    <td>{{item.educationLevel}}</td>
+                    <td>{{item.placeOfBirthday}}</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+</section>

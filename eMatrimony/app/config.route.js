@@ -5,7 +5,7 @@
 
     // Collect the routes
     app.constant('routes', getRoutes());
-    
+
     // Configure the routes and route resolvers
     app.config(['$routeProvider', 'routes', routeConfigurator]);
     function routeConfigurator($routeProvider, routes) {
@@ -29,7 +29,18 @@
                         content: '<i class="fa fa-dashboard"></i> Register'
                     }
                 }
-            }
+            },
+              {
+                  url: '/search',
+                  config: {
+                      templateUrl: 'app/profile/search.html',
+                      title: 'search',
+                      settings: {
+                          nav: 1,
+                          content: '<i class="fa fa-dashboard"></i> Search'
+                      }
+                  }
+              }
         ];
     }
 })();

@@ -35,6 +35,9 @@ namespace eMatrimony.Model
         public string Ethnicity { get; set; }
         public string AboutMe { get; set; }
         public string AboutMyParent { get; set; }
-
+        public string ProfileFilePath { get; set; }
+        public string ProfileFileContentType { get; set; }
+        public string HoroscopeFilePath { get; set; }
+        public string HoroscopeFileContentType { get; set; }
     }
 }

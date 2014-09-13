@@ -58,6 +58,10 @@
     <Compile Include="Migrations\201409070120582_Initial.Designer.cs">
       <DependentUpon>201409070120582_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201409130117015_Add_Horoscope_Profile_Picture.cs" />
+    <Compile Include="Migrations\201409130117015_Add_Horoscope_Profile_Picture.Designer.cs">
+      <DependentUpon>201409130117015_Add_Horoscope_Profile_Picture.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Profile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,6 +74,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201409070120582_Initial.resx">
       <DependentUpon>201409070120582_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409130117015_Add_Horoscope_Profile_Picture.resx">
+      <DependentUpon>201409130117015_Add_Horoscope_Profile_Picture.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
