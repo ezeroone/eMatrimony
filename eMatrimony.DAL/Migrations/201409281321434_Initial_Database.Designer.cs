@@ -7,13 +7,13 @@ namespace eMatrimony.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.1-30610")]
-    public sealed partial class Add_Horoscope_Profile_Picture : IMigrationMetadata
+    public sealed partial class Initial_Database : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Add_Horoscope_Profile_Picture));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial_Database));
         
         string IMigrationMetadata.Id
         {
-            get { return "201409130117015_Add_Horoscope_Profile_Picture"; }
+            get { return "201409281321434_Initial_Database"; }
         }
         
         string IMigrationMetadata.Source

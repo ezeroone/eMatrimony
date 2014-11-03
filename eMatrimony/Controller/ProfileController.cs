@@ -1,28 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Configuration;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Mvc;
 using AutoMapper;
 using eMatrimony.Action;
 using eMatrimony.BLL.Model;
+using eMatrimony.BLL.Services;
 using eMatrimony.DAL;
 using eMatrimony.Model;
 using FileResult = eMatrimony.Model.FileResult;
 
 namespace eMatrimony.Controller
 {
-    [RoutePrefix("api/profile")]
+    [System.Web.Http.RoutePrefix("api/profile")]
     public class ProfileController : ApiController
     {
         private BLL.Services.ProfileService profileService;
+        private BLL.Services.LookupService lookupService;
         private string _serverUploadFolder;
 
         public ProfileController()
         {
-            profileService = new BLL.Services.ProfileService(new EMatrimonyContext());
+            var context = new EMatrimonyContext();
+            profileService = new ProfileService(context);
+            lookupService = new LookupService(context);
             _serverUploadFolder = ConfigurationManager.AppSettings["ServerUploadPath"];
         }
 
@@ -39,8 +45,8 @@ namespace eMatrimony.Controller
             return result;
         }
 
-        [Route("files")]
-        [HttpPost]
+        [System.Web.Http.Route("files")]
+        [System.Web.Http.HttpPost]
         [ValidateMimeMultipartContentFilter]
         public async Task<FileResult> UploadSingleFile()
         {
@@ -59,13 +65,28 @@ namespace eMatrimony.Controller
             };
         }
 
-        [HttpGet]
+        [System.Web.Http.HttpGet]
         public async Task<IEnumerable<ProfileViewModel>> GetProfiles()
         {
             Mapper.CreateMap<DAL.Profile, ProfileViewModel>();
             var profiles = await profileService.GetProfiles();
             var list = Mapper.Map<IEnumerable<DAL.Profile>, IEnumerable<ProfileViewModel>>(profiles);
             return list;
+        }
+
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.Route("Lookup")]
+        public async Task<object> GetLookups()
+        {
+            var lookup = new
+            {
+                countries = await lookupService.GetCountries(),
+                educationLevels = await lookupService.GetEducationLevel(),
+                tongues = await lookupService.GetTongues(),
+                religions = await lookupService.GetReligions()
+            };
+
+            return Json(lookup);
         }
 
     }

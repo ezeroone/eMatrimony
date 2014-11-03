@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace eMatrimony.DAL
@@ -24,15 +26,16 @@ namespace eMatrimony.DAL
         PhysicallyChallenged = 1 
     }
 
-    public class Profile : IdentityUser
+
+    public class User : IdentityUser
     {
+    }
+
+    public class Profile
+    {
+        [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
         public string Name { get; set; }
-
-        public override string UserName {
-            set { Email = value; }
-            get { return Email; }
-        }
         public string DisplayName { get; set; }
         public Gender Gender { get; set; }
         public DateTime DateOfBirthday { get; set; }
@@ -62,6 +65,5 @@ namespace eMatrimony.DAL
         public string ProfileFileContentType { get; set; }
         public string HoroscopeFilePath { get; set; }
         public string HoroscopeFileContentType { get; set; }
-
     }
 }

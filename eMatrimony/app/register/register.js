@@ -19,6 +19,7 @@
         vm.profile = {};
         vm.title = 'register';
         vm.register = registerProfile;
+        vm.lookups = [];
 
         activate();
 
@@ -76,7 +77,10 @@
         }
 
         function activate() {
-
+            return datacontext.getLookups().then(function (res) {
+                vm.lookups = res.data;
+                return res.data;
+            });
         }
     }
 })();

@@ -3,7 +3,7 @@
     <section class="matter">
         <div class="container">
 
-            <p>Fill in the form below</p>
+            <h2>Register</h2>
             <hr />
 
 
@@ -74,11 +74,8 @@
                     <label class="col-sm-2" for="Religion">Religion</label>
                     <div class="col-sm-10">
                         <select class="form-control" ng-model="vm.profile.religion" name="Religion">
-                            <option selected="">--- Select ---</option>
-                            <option>Buddhist</option>
-                            <option>Christian</option>
-                            <option>Muslim</option>
-                            <option>Hindu</option>
+                            <option value="">--- Select ---</option>
+                            <option ng-repeat="item in vm.lookups.religions" value="{{item.Name}}">{{item.Name}}</option>
                         </select>
                     </div>
                 </div>
@@ -91,13 +88,8 @@
                     <label class="col-sm-2" for="EducationLevel" >Education Level</label>
                     <div class="col-sm-10">
                         <select class="form-control" ng-model="vm.profile.educationLevel" name="EducationLevel">
-                            <option selected="">--- Select ---</option>
-                            <option>High School</option>
-                            <option>Trade School</option>
-                            <option>Diploma</option>
-                            <option>Bachelors</option>
-                            <option>Masters</option>
-                            <option>Doctorate</option>
+                            <option value="">--- Select ---</option>
+                            <option ng-repeat="item in vm.lookups.educationLevels" value="{{item.Description}}">{{item.Description}}</option>
                         </select>
                     </div>
                 </div>
@@ -106,7 +98,7 @@
                     <label class="col-sm-2" for="OccupationLevel" >Occupation Level</label>
                     <div class="col-sm-10">
                         <select class="form-control" ng-model="vm.profile.occupationLevel" name="OccupationLevel">
-                            <option>--- Select ---</option>
+                            <option value="">--- Select ---</option>
                             <option>Accounts/Auditing</option>
                             <option>Administrative/Secretarial</option>
                             <option>Advertising/Media/PR</option>
@@ -155,60 +147,7 @@
                     <div class="col-sm-10">
                         <select class="form-control" ng-model="vm.profile.placeOfBirthday" name="PlaceOfBirthday">
                             <option>--- Select ---</option>
-                            <option>Sri Lanka</option>
-                            <option>Canada</option>
-                            <option>United Kingdom</option>
-                            <option>France</option>
-                            <option>Switzerland</option>
-                            <option>Australia</option>
-                            <option>India</option>
-                            <option>United States of America</option>
-                            <option value="">-------------------------</option>
-                            <option>Afghanistan</option>
-                            <option>Albania</option>
-                            <option>Algeria</option>
-                            <option>American Samoa</option>
-                            <option>Andorra</option>
-                            <option>Angola</option>
-                            <option>Anguilla</option>
-                            <option>Antarctica</option>
-                            <option>Antigua and Barbuda</option>
-                            <option>Argentina</option>
-                            <option>Armenia</option>
-                            <option>Aruba</option>
-                            <option>Ashmore and Cartier Islands</option>
-                            <option>Australia</option>
-                            <option>Austria</option>
-                            <option>Azerbaijan</option>
-                            <option>Bahamas</option>
-                            <option>Bahrain</option>
-                            <option>Bangladesh</option>
-                            <option>Barbados</option>
-                            <option>Bassas da India</option>
-                            <option>Belarus</option>
-                            <option>Belgium</option>
-                            <option>Belize</option>
-                            <option>Benin</option>
-                            <option>Bermuda</option>
-                            <option>Bhutan</option>
-                            <option>Bodies of water</option>
-                            <option>Bolivia</option>
-                            <option>Bosnia and Herzegovina</option>
-                            <option>Botswana</option>
-                            <option>Bouvet Island</option>
-                            <option>Brazil</option>
-                            <option>British Indian Ocean Territory</option>
-                            <option>British Virgin Islands</option>
-                            <option>Brunei</option>
-                            <option>Bulgaria</option>
-                            <option>Burkina Faso</option>
-                            <option>Burundi</option>
-                            <option>Cambodia</option>
-                            <option>Cameroon</option>
-                            <option>Canada</option>
-                            <option>Cape Verde</option>
-                            <option>Cayman Islands</option>
-                            <option>Central African Republic</option>
+                            <option ng-repeat="item in vm.lookups.countries" value="{{item.Name}}">{{item.Name}}</option>
                         </select>
                     </div>
                 </div>
@@ -217,61 +156,8 @@
                     <label class="col-sm-2" for="CountryLiveIn" >Country Live In</label>
                     <div class="col-sm-10">
                         <select class="form-control" ng-model="vm.profile.countryLiveIn" name="CountryLiveIn">
-                            <option>--- Select ---</option>
-                            <option>Sri Lanka</option>
-                            <option>Canada</option>
-                            <option>United Kingdom</option>
-                            <option>France</option>
-                            <option>Switzerland</option>
-                            <option>Australia</option>
-                            <option>India</option>
-                            <option>United States of America</option>
-                            <option value="">-------------------------</option>
-                            <option>Afghanistan</option>
-                            <option>Albania</option>
-                            <option>Algeria</option>
-                            <option>American Samoa</option>
-                            <option>Andorra</option>
-                            <option>Angola</option>
-                            <option>Anguilla</option>
-                            <option>Antarctica</option>
-                            <option>Antigua and Barbuda</option>
-                            <option>Argentina</option>
-                            <option>Armenia</option>
-                            <option>Aruba</option>
-                            <option>Ashmore and Cartier Islands</option>
-                            <option>Australia</option>
-                            <option>Austria</option>
-                            <option>Azerbaijan</option>
-                            <option>Bahamas</option>
-                            <option>Bahrain</option>
-                            <option>Bangladesh</option>
-                            <option>Barbados</option>
-                            <option>Bassas da India</option>
-                            <option>Belarus</option>
-                            <option>Belgium</option>
-                            <option>Belize</option>
-                            <option>Benin</option>
-                            <option>Bermuda</option>
-                            <option>Bhutan</option>
-                            <option>Bodies of water</option>
-                            <option>Bolivia</option>
-                            <option>Bosnia and Herzegovina</option>
-                            <option>Botswana</option>
-                            <option>Bouvet Island</option>
-                            <option>Brazil</option>
-                            <option>British Indian Ocean Territory</option>
-                            <option>British Virgin Islands</option>
-                            <option>Brunei</option>
-                            <option>Bulgaria</option>
-                            <option>Burkina Faso</option>
-                            <option>Burundi</option>
-                            <option>Cambodia</option>
-                            <option>Cameroon</option>
-                            <option>Canada</option>
-                            <option>Cape Verde</option>
-                            <option>Cayman Islands</option>
-                            <option>Central African Republic</option>
+                            <option value="">--- Select ---</option>
+                            <option ng-repeat="item in vm.lookups.countries" value="{{item.Name}}">{{item.Name}}</option>
                         </select>
                     </div>
                 </div>
@@ -280,61 +166,8 @@
                     <label class="col-sm-2" for="Citizenship" >Citizenship</label>
                     <div class="col-sm-10">
                         <select class="form-control" ng-model="vm.profile.citizenship" name="Citizenship">
-                            <option>--- Select ---</option>
-                            <option>Sri Lanka</option>
-                            <option>Canada</option>
-                            <option>United Kingdom</option>
-                            <option>France</option>
-                            <option>Switzerland</option>
-                            <option>Australia</option>
-                            <option>India</option>
-                            <option>United States of America</option>
-                            <option value="">-------------------------</option>
-                            <option>Afghanistan</option>
-                            <option>Albania</option>
-                            <option>Algeria</option>
-                            <option>American Samoa</option>
-                            <option>Andorra</option>
-                            <option>Angola</option>
-                            <option>Anguilla</option>
-                            <option>Antarctica</option>
-                            <option>Antigua and Barbuda</option>
-                            <option>Argentina</option>
-                            <option>Armenia</option>
-                            <option>Aruba</option>
-                            <option>Ashmore and Cartier Islands</option>
-                            <option>Australia</option>
-                            <option>Austria</option>
-                            <option>Azerbaijan</option>
-                            <option>Bahamas</option>
-                            <option>Bahrain</option>
-                            <option>Bangladesh</option>
-                            <option>Barbados</option>
-                            <option>Bassas da India</option>
-                            <option>Belarus</option>
-                            <option>Belgium</option>
-                            <option>Belize</option>
-                            <option>Benin</option>
-                            <option>Bermuda</option>
-                            <option>Bhutan</option>
-                            <option>Bodies of water</option>
-                            <option>Bolivia</option>
-                            <option>Bosnia and Herzegovina</option>
-                            <option>Botswana</option>
-                            <option>Bouvet Island</option>
-                            <option>Brazil</option>
-                            <option>British Indian Ocean Territory</option>
-                            <option>British Virgin Islands</option>
-                            <option>Brunei</option>
-                            <option>Bulgaria</option>
-                            <option>Burkina Faso</option>
-                            <option>Burundi</option>
-                            <option>Cambodia</option>
-                            <option>Cameroon</option>
-                            <option>Canada</option>
-                            <option>Cape Verde</option>
-                            <option>Cayman Islands</option>
-                            <option>Central African Republic</option>
+                            <option value="">--- Select ---</option>
+                            <option ng-repeat="item in vm.lookups.countries" value="{{item.Name}}">{{item.Name}}</option>
                         </select>
                     </div>
                 </div>
@@ -355,12 +188,8 @@
                     <label class="col-sm-2" for="Mothertongue">Mother tongue</label>
                     <div class="col-sm-10">
                         <select class="form-control" ng-model="vm.profile.mothertongue" name="Mothertongue">
-                            <option value="0" selected="">--- Select ---</option>
-                            <option>Sinhalese</option>
-                            <option>Tamil</option>
-                            <option>English</option>
-                            <option>Malay</option>
-                            <option>Others</option>
+                            <option value="">--- Select ---</option>
+                            <option ng-repeat="item in vm.lookups.tongues" value="{{item.Description}}">{{item.Description}}</option>
                         </select>
                     </div>
                 </div>
@@ -372,26 +201,26 @@
                 <div class="form-group">
                     <label class="col-sm-2" for="Password" >Password</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" ng-model="vm.profile.password" name="Password">
+                        <input type="password" class="form-control" ng-model="vm.profile.password" name="Password">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-sm-2" for="ConfirmPassword">Confirm Password</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" ng-model="vm.profile.confirmPassword" name="ConfirmPassword" >
+                        <input type="password" class="form-control" ng-model="vm.profile.confirmPassword" name="ConfirmPassword" >
                     </div>
                 </div>
                 
                 <div class="form-group">
-                    <label class="col-sm-2" for="ConfirmPassword">Profile Picture</label>
+                    <label class="col-sm-2" for="ProfilePicture">Profile Picture</label>
                     <div class="col-sm-10">
                         <input type="file" class="form-control" file-model="vm.profile.profilePicture" name="ProfilePicture">
                     </div>
                 </div>
                 
                 <div class="form-group">
-                    <label class="col-sm-2" for="ConfirmPassword">Horoscope</label>
+                    <label class="col-sm-2" for="Horoscope">Horoscope</label>
                     <div class="col-sm-10">
                         <input type="file" class="form-control" file-model="vm.profile.horoscope" name="Horoscope">
                     </div>

@@ -9,27 +9,40 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace eMatrimony.BLL.Services
 {
-    public class ProfileService
+    public class ProfileService : AbstractService
     {
-        private DbContext eMatrimonyContext;
-        private UserManager<Profile> userManager;
+        private UserManager<User> userManager;
+        private DbSet<Profile> profiles;
 
-        public ProfileService(DbContext eMatrimonyContext)
+        public ProfileService(DbContext eMatrimonyContext): base(eMatrimonyContext)
         {
-            this.eMatrimonyContext = eMatrimonyContext;
-            userManager = new UserManager<Profile>(new UserStore<Profile>(eMatrimonyContext));
+            userManager = new UserManager<User>(new UserStore<User>(eMatrimonyContext));
+            profiles = eMatrimonyContext.Set<Profile>();
         }
 
         public async Task<BaseResponse> CreateNewProfile(CreateNewProfileModel createNewProfileModel)
         {
-            var result = await userManager.CreateAsync(createNewProfileModel.Profile, createNewProfileModel.Password);
+            var user = new User()
+            {
+                Email = createNewProfileModel.Profile.Email,
+                UserName = createNewProfileModel.Profile.Email,
+            };
+            
+            var result = await userManager.CreateAsync(user, createNewProfileModel.Password);
+
+            if (result.Succeeded)
+            {
+                profiles.Add(createNewProfileModel.Profile);
+                eMatrimonyContext.SaveChanges();
+            }
+
             return new BaseResponse(result.Succeeded, string.Join(",", result.Errors.ToArray()));
         }
 
         public async Task<IEnumerable<Profile>> GetProfiles()
         {
-            var profiles = await userManager.Users.ToListAsync();            
-            return profiles;
+            var list = await profiles.ToListAsync();
+            return list;
         }
 
     }
